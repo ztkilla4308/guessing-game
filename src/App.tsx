@@ -13,7 +13,6 @@ function App() {
     function getGameData(){
       const oldTiles = document.getElementsByClassName('DNDelete')
 
-      console.log(oldTiles)
       for (let i = 0; i < oldTiles.length; i++) {
         oldTiles[i].classList.remove('inactive-item')
         oldTiles[i].classList.add('game-item');
@@ -39,6 +38,7 @@ function App() {
   // Pick two tiles and disable every single one
   function tileHandler(tileprop: any){
     tileprop.classList.toggle('active')
+    tileprop.disabled = true
     setCheckedTiles([...checkedTiles, tileprop])
   }
 
